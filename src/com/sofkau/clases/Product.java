@@ -10,13 +10,16 @@
 
 package com.sofkau.clases;
 
-public class Animal {
+import java.util.UUID;
+
+public class Product {
 
     // PROPERTIES OR ATTRIBUTES
-    private String breed;
+    protected String id;
     private String name;
-    private int age;
-    protected String owner;
+    private String description;
+    private float price;
+    private boolean state;
 
     // CONSTRUCTORS
 
@@ -24,46 +27,48 @@ public class Animal {
     /**
      * Create an instance with no attributes of the Person class
      */
-    public Animal() {
+    public Product() {
         super();
     }
 
     // Constructor with properties or attributes
     /**
-     * Create an instance with attributes of the Animal class
-     * @param breed Breed of the animal.
-     * @param name Name of the animal.
-     * @param age Age of the animal.
-     * @param owner Owner of the animal.
+     * Create an instance with attributes of the Product class
+     * @param name Name of the product.
+     * @param description Description of the product.
+     * @param price Price of the product.
+     * @param state Activation status of the product.
      */
-    public Animal(String breed, String name, int age, String owner) {
-        this.breed = breed;
+    public Product(String name, String description, float price, boolean state) {
+        this.id=setId();
         this.name = name;
-        this.age = age;
-        this.owner = owner;
+        this.description = description;
+        this.price = price;
+        this.state = state;
     }
 
     // METHODS
 
     /**
-     * Method getter breed
-     * @return Get the bread of the animal.
+     * Method getter id
+     * @return Get the id of the product.
      */
-    public String getBreed() {
-        return breed;
+    public String getId() {
+        return id;
     }
 
     /**
-     * Method setter breed
-     * @param breed Set the breed of the animal.
+     * Method setter id
+     * @return Assign an identifier of the product.
      */
-    public void setBreed(String breed) {
-        this.breed = breed;
+    private String setId() {
+       UUID uuid = UUID.randomUUID();
+        return "" + uuid;
     }
 
     /**
      * Method getter name
-     * @return Get the name of the animal.
+     * @return Get the name of the product.
      */
     public String getName() {
         return name;
@@ -71,55 +76,72 @@ public class Animal {
 
     /**
      * Method setter name
-     * @param name Set the name of the animal.
+     * @param name Set the name of the product.
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * Method getter age
-     * @return Get the age of the animal.
+     * Method getter description
+     * @return Get the description of the product.
      */
-    public int getAge() {
-        return age;
+    public String getDescription() {
+        return this.description;
     }
 
     /**
-     * Method setter age
-     * @param age Set the age of the animal.
+     * Method setter description
+     * @param description Set the description of the product.
      */
-    public void setAge(int age) {
-        this.age = age;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     /**
-     * Method getter owner
-     * @return Get the owner of the animal.
+     * Method getter price
+     * @return Get the price of the product.
      */
-    public String getOwner() {
-        return owner;
+    public float getPrice() {
+        return price;
     }
 
     /**
-     * Method setter owner
-     * @param owner Set the owner of the animal.
+     * Method setter price
+     * @param price Set the price of the product.
      */
-    public void setOwner(String owner) {
-        this.owner = owner;
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    /**
+     * Method getter state
+     * @return Get the state of the product.
+     */
+    public boolean getState() {
+        return state;
+    }
+
+    /**
+     * Method setter state
+     * @param state Set the state of the product.
+     */
+    public void setState(boolean state) {
+        this.state = state;
     }
 
     /**
      *
-     * @return It shows on the screen the attributes that an instance of Animal contains.
+     * @return It shows on the screen the attributes that an instance of Product contains.
      */
     @Override
     public String toString() {
-        return "Animal{" +
-                "breed='" + breed + '\'' +
+        return "Product{" +
+                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
-                ", age=" + age +
-                ", owner='" + owner + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", state=" + state +
                 '}';
     }
 }

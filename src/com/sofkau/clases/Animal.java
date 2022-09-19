@@ -10,11 +10,15 @@
 
 package com.sofkau.clases;
 
-public class BankAccount {
+import java.util.UUID;
+
+public class Animal {
 
     // PROPERTIES OR ATTRIBUTES
-    private int accountNumber;
-    protected boolean activated;
+    protected String code;
+    private String breed;
+    private String name;
+    private int age;
 
     // CONSTRUCTORS
 
@@ -22,64 +26,103 @@ public class BankAccount {
     /**
      * Create an instance with no attributes of the Person class
      */
-    public BankAccount() {
+    public Animal() {
         super();
     }
 
     // Constructor with properties or attributes
     /**
-     * Create an instance with attributes of the Person class
-     * @param accountNumber Account number of the bank account.
-     * @param activated Activation status of the bank account number.
+     * Create an instance with attributes of the Animal class
+     * @param breed Breed of the animal.
+     * @param name Name of the animal.
+     * @param age Age of the animal.
      */
-    public BankAccount(int accountNumber, boolean activated) {
-        this.accountNumber = accountNumber;
-        this.activated = activated;
+
+    public Animal(String breed, String name, int age) {
+        this.code=setCode();
+        this.breed = breed;
+        this.name = name;
+        this.age = age;
     }
 
     // METHODS
 
     /**
-     * Method getter account number
-     * @return Get the account number of the bank account.
+     * Method getter code
+     * @return Get the code of the animal.
      */
-    public int getAccountNumber() {
-        return this.accountNumber;
+    public String getCode() {
+        return code;
     }
 
     /**
-     * Method setter account number
-     * @param accountNumber Set the account number of the bank account.
+     * Method setter code
+     * @return Assign an identifier of the animal.
      */
-    public void setAccountNumber(int accountNumber) {
-        this.accountNumber = accountNumber;
+    private String setCode() {
+        UUID uuid = UUID.randomUUID();
+        return "" + uuid;
     }
 
     /**
-     * Method getter activated
-     * @return Get activation status of the bank account number.
+     * Method getter breed
+     * @return Get the bread of the animal.
      */
-    public boolean getActivated() {
-        return activated;
+    public String getBreed() {
+        return breed;
     }
 
     /**
-     * Method setter activated
-     * @param activated Set activation status of the bank account number.
+     * Method setter breed
+     * @param breed Set the breed of the animal.
      */
-    public void setActivated(boolean activated) {
-        this.activated = activated;
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
+    /**
+     * Method getter name
+     * @return Get the name of the animal.
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Method setter name
+     * @param name Set the name of the animal.
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * Method getter age
+     * @return Get the age of the animal.
+     */
+    public int getAge() {
+        return age;
+    }
+
+    /**
+     * Method setter age
+     * @param age Set the age of the animal.
+     */
+    public void setAge(int age) {
+        this.age = age;
     }
 
     /**
      *
-     * @return It shows on the screen the attributes that an instance of BankAccount contains.
+     * @return It shows on the screen the attributes that an instance of Animal contains.
      */
     @Override
     public String toString() {
-        return "BankAccount{" +
-                "accountNumber=" + accountNumber +
-                ", activated=" + activated +
+        return "Animal{" +
+                "code='" + code + '\'' +
+                ", breed='" + breed + '\'' +
+                ", name='" + name + '\'' +
+                ", age=" + age +
                 '}';
     }
 }

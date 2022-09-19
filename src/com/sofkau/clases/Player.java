@@ -12,136 +12,118 @@ package com.sofkau.clases;
 
 import java.util.Date;
 
-public class Person {
+public class Player extends Person {
 
     // PROPERTIES OR ATTRIBUTES
-    public String name;
-    public String lastName1;
-    public String lastName2;
-    public Date dateBirth;
-    public float height;
+    private String clubName;
+    private String position;
+    private int jerseyNumber;
+    private float salary;
 
     // CONSTRUCTORS
-
-    // Void constructor
-    /**
-     * Create an instance with no attributes of the Person class
-     */
-    public Person() {
-        super();
-    }
-
     // Constructor with properties or attributes
     /**
-     * Create an instance with attributes of the Person class
+     * Create an instance with attributes of the Player class extends of person
      * @param name Name of the person.
      * @param lastName1 Last name one of the person.
      * @param lastName2 Last name two of the person.
      * @param dateBirth Date birth of the person.
      * @param height Height of the person.
+     * @param clubName Name of the club where the person plays.
+     * @param position Position where the person plays.
+     * @param jerseyNumber Jersey number with which the person plays.
+     * @param salary Salary earned by the player.
      */
-    public Person(String name, String lastName1, String lastName2, Date dateBirth, float height) {
-        this.name = name;
-        this.lastName1 = lastName1;
-        this.lastName2 = lastName2;
-        this.dateBirth = dateBirth;
-        this.height = height;
+    public Player(String name, String lastName1, String lastName2, Date dateBirth, float height, String clubName, String position, int jerseyNumber, float salary) {
+        super(name, lastName1, lastName2, dateBirth, height);
+        this.clubName = clubName;
+        this.position = position;
+        this.jerseyNumber = jerseyNumber;
+        this.salary = salary;
     }
 
     // METHODS
 
     /**
-     * Method getter name
-     * @return Get the name attribute of the person.
+     * Method getter club name
+     * @return Get the club name attribute of the player.
      */
-    public String getName() {
-        return name;
+    public String getClubName() {
+        return clubName;
     }
 
     /**
-     * Method setter name
-     * @param name Set the name attribute of the person.
+     * Method setter club name
+     * @param clubName Set the club name attribute of the player.
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setClubName(String clubName) {
+        this.clubName = clubName;
     }
 
     /**
-     * Method getter first last name
-     * @return Get the first last name attribute of the person.
+     * Method getter position
+     * @return Get the position attribute of the player.
      */
-    public String getLastName1() {
-        return lastName1;
+    public String getPosition() {
+        return position;
     }
 
     /**
-     * Method setter first last name
-     * @param lastName1 Set the first last name attribute of the person.
+     * Method setter position
+     * @param position Set the club name attribute of the player.
      */
-    public void setLastName1(String lastName1) {
-        this.lastName1 = lastName1;
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     /**
-     * Method getter second last name
-     * @return Get the second last name attribute of the person.
+     * Method getter jersey number
+     * @return Get the position attribute of the player.
      */
-    public String getLastName2() {
-        return lastName2;
+    public int getJerseyNumber() {
+        return jerseyNumber;
     }
 
     /**
-     * Method setter second last name
-     * @param lastName2 Set the second last name attribute of the person.
+     * Method setter jersey number
+     * @param jerseyNumber Set the jersey number attribute of the player.
      */
-    public void setLastName2(String lastName2) {
-        this.lastName2 = lastName2;
+    public void setJerseyNumber(int jerseyNumber) {
+        this.jerseyNumber = jerseyNumber;
     }
 
     /**
-     * Method getter date birth
-     * @return Get the date birth attribute of the person.
+     * Method getter salary
+     * @return Get the salary attribute of the player.
      */
-    public Date getDateBirth() {
-        return dateBirth;
+    public float getSalary() {
+        return salary;
     }
 
     /**
-     * Method setter date birth
-     * @param dateBirth Set the date birth attribute of the person.
+     * Method setter salary
+     * @param salary Set the salary attribute of the player.
      */
-    public void setDateBirth(Date dateBirth) {
-        this.dateBirth = dateBirth;
-    }
-
-    /**
-     * Method getter height
-     * @return Get the height attribute of the person.
-     */
-    public float getHeight() {
-        return height;
-    }
-
-    /**
-     * Method setter height
-     * @param height Set the height attribute of the person.
-     */
-    public void setHeight(float height) {
-        this.height = height;
+    public void setSalary(float salary) {
+        this.salary = salary;
     }
 
     /**
      *
-     * @return It shows on the screen the attributes that an instance of Person contains.
+     * @return It shows on the screen the attributes that an instance of Player contains.
      */
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
+        return "Player{" +
+                " name='" + name + '\'' +
                 ", lastName1='" + lastName1 + '\'' +
                 ", lastName2='" + lastName2 + '\'' +
                 ", dateBirth=" + dateBirth +
                 ", height=" + height +
+                ", clubName='" + clubName + '\'' +
+                ", position='" + position + '\'' +
+                ", jerseyNumber=" + jerseyNumber +
+                ", salary=" + salary +
                 '}';
     }
 }
